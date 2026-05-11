@@ -28,7 +28,7 @@ Maker deposits token A  →  vault (PDA-owned)
 ## Program ID
 
 ```
-8F3byNyXVHzfmjKK9J2cxvVbKzRiVYh8icoprMUqSFmb
+J2kY752yEsS176kRoftpdtUQbQ4ausZe7cZE88BSyJ74
 ```
 
 ## Prerequisites
@@ -56,11 +56,11 @@ anchor test
 
 Opens an escrow. The maker deposits `amount` of token A into a vault and records how much token B they expect in return.
 
-| Argument  | Type | Description                                          |
-|-----------|------|------------------------------------------------------|
+| Argument  | Type | Description                                                                               |
+| --------- | ---- | ----------------------------------------------------------------------------------------- |
 | `seed`    | u64  | Arbitrary value used as a PDA seed; allows a maker to run multiple escrows simultaneously |
-| `receive` | u64  | Amount of token B the maker wants in return          |
-| `amount`  | u64  | Amount of token A to deposit into the vault          |
+| `receive` | u64  | Amount of token B the maker wants in return                                               |
+| `amount`  | u64  | Amount of token A to deposit into the vault                                               |
 
 Both `amount` and `receive` must be greater than zero.
 
@@ -85,14 +85,14 @@ Cancels the escrow. Only the original maker can call this:
 
 ### `Escrow` — PDA seeds: `["escrow", maker_pubkey, seed (little-endian u64)]`
 
-| Field     | Type   | Description                                   |
-|-----------|--------|-----------------------------------------------|
-| `seed`    | u64    | PDA seed chosen by the maker                  |
-| `maker`   | Pubkey | The wallet that created the escrow            |
-| `mint_a`  | Pubkey | The token the maker is offering               |
-| `mint_b`  | Pubkey | The token the maker wants to receive          |
-| `receive` | u64    | Amount of token B required to complete        |
-| `bump`    | u8     | PDA bump seed                                 |
+| Field     | Type   | Description                            |
+| --------- | ------ | -------------------------------------- |
+| `seed`    | u64    | PDA seed chosen by the maker           |
+| `maker`   | Pubkey | The wallet that created the escrow     |
+| `mint_a`  | Pubkey | The token the maker is offering        |
+| `mint_b`  | Pubkey | The token the maker wants to receive   |
+| `receive` | u64    | Amount of token B required to complete |
+| `bump`    | u8     | PDA bump seed                          |
 
 ### Vault
 
@@ -104,9 +104,9 @@ The program uses `TokenInterface` / `InterfaceAccount<Mint>` / `InterfaceAccount
 
 ## Error Codes
 
-| Code           | Message          |
-|----------------|------------------|
-| `InvalidAmount` | Invalid amount  |
-| `InvalidMaker`  | Invalid maker   |
-| `InvalidMintA`  | Invalid mint a  |
-| `InvalidMintB`  | Invalid mint b  |
+| Code            | Message        |
+| --------------- | -------------- |
+| `InvalidAmount` | Invalid amount |
+| `InvalidMaker`  | Invalid maker  |
+| `InvalidMintA`  | Invalid mint a |
+| `InvalidMintB`  | Invalid mint b |

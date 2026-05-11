@@ -5,7 +5,7 @@ use anchor_lang::prelude::*;
 pub struct Escrow {
     /// Arbitrary seed used to derive the PDA for this escrow.
     /// Ensures uniqueness (e.g. maker can create multiple escrows).
-    /// Typically passed from the client when creating the escrow.
+    /// Typically passed from the client when creating the escrow. 
     pub seed: u64,
 
     /// The creator of the escrow (the one offering tokens).

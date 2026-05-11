@@ -1,4 +1,4 @@
-# Solana Bootcamp 2026
+# Solana Bootcamp Projects 2026
 
 | # | Project | Video |
 |---|---------|-------|

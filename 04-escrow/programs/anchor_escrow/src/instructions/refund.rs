@@ -18,12 +18,14 @@ pub struct Refund<'info> {
         close = maker,
         seeds = [b"escrow", maker.key().as_ref(), escrow.seed.to_le_bytes().as_ref()],
         bump = escrow.bump,
-        has_one = maker @ EscrowError::InvalidMaker,
-        has_one = mint_a @ EscrowError::InvalidMintA,
+        has_one = maker @ EscrowError::InvalidMaker, // the has_one constraint ensures the escrow account's maker field matches the signer
+        has_one = mint_a @ EscrowError::InvalidMintA, // the has_one constraint ensures the escrow account's mint_a field matches the provided mint_a account
     )]
     pub escrow: Box<Account<'info, Escrow>>,
 
-    #[account(mint::token_program = token_program)]
+    #[account(
+        mint::token_program = token_program
+    )]
     pub mint_a: Box<InterfaceAccount<'info, Mint>>,
 
     #[account(

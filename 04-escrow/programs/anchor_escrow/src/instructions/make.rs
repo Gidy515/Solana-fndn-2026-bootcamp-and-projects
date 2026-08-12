@@ -14,8 +14,8 @@ pub struct Make<'info> {
     #[account(
         init,
         payer=maker,
-        space=Escrow::INIT_SPACE +Escrow::DISCRIMINATOR.len(),
-        seeds=[b"escrow",maker.key().as_ref(),seed.to_le_bytes().as_ref()],
+        space=Escrow::INIT_SPACE + Escrow::DISCRIMINATOR.len(),
+        seeds=[b"escrow", maker.key().as_ref(), seed.to_le_bytes().as_ref()],
         bump,
     )]
     pub escrow: Account<'info, Escrow>,

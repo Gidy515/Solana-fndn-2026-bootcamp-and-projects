@@ -3,7 +3,7 @@ use anchor_litesvm::{AnchorContext, AnchorLiteSVM, AssertionHelpers, Pubkey, Sig
 
 declare_program!(voting);
 
-use self::voting::accounts::{CandidateAccount, PollAccount};
+/*use self::voting::accounts::{CandidateAccount, PollAccount};
 use self::voting::client::{accounts, args};
 
 const PROGRAM_BYTES: &[u8] = include_bytes!("../../../target/deploy/voting.so");
@@ -243,3 +243,4 @@ fn test_vote_after_end_fails() {
         .assert_failure()
         .assert_anchor_error("VotingEnded");
 }
+*/

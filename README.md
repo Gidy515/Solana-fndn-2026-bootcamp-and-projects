@@ -1,4 +1,6 @@
-# Solana Bootcamp Projects 2026
+# Solana Bootcamp 2026
+
+A hands-on progression through Solana program development — starting from local environment setup and a first on-chain program, through core patterns like voting, escrow, and stablecoins, up to more advanced territory: private transfers, stableswaps, x402 payments, RWA tokenization, indexing, and a prediction market. Each folder is a self-contained project built and debugged as part of the Solana Foundation bootcamp track.
 
 | # | Project | Video |
 |---|---------|-------|
